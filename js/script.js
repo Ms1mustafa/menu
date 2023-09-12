@@ -96,18 +96,22 @@ addBtn.forEach((btn, i) => {
             alt="${itemImg[i].alt}" 
             class="addItem__info--img"
             loading="lazy">
-            <h1 class="addItem__info--name">${itemName} <span class="addItem__info--price">${itemPrice[i].textContent}<span></h1>
+            <h1 class="addItem__info--name">${itemName} <span class="addItem__info--price">${
+        itemPrice[i].textContent
+      }<span></h1>
           </div>
           <div class="addItem__orderInfo">
             <p class="addItem__orderInfo--extras">الإضافات</p>
               <div class="addItem__orderInfo--extra">
                 <p class="addItem__orderInfo--extraName">ثومية</p>
                 <p class="addItem__orderInfo--extraPrice">1000 د.ع</p>
+                <input class="addItem__orderInfo--extraQty" type="number" value="1" min="1">
                 <input class="addItem__orderInfo--extraCheck" type="checkbox">
               </div>
               <div class="addItem__orderInfo--extra">
-                <p class="addItem__orderInfo--extraName">ثومية</p>
+                <p class="addItem__orderInfo--extraName">صلصة الباربكيو</p>
                 <p class="addItem__orderInfo--extraPrice">1000 د.ع</p>
+                <input class="addItem__orderInfo--extraQty" type="number" value="1" min="1">
                 <input class="addItem__orderInfo--extraCheck" type="checkbox">
               </div>
             <textarea class="addItem__orderInfo--note" placeholder="إضافة ملاحضات ..."></textarea>
@@ -143,24 +147,42 @@ addBtn.forEach((btn, i) => {
 
     const updateTotal = () => {
       let totalPrice = parseFloat(itemPrice[i].textContent.match(/\d+/)[0]);
+      let totalExtras = 0;
 
       extras.forEach((extra) => {
         const checkbox = extra.querySelector(".addItem__orderInfo--extraCheck");
-        const extraPrice = parseFloat(
-          extra
-            .querySelector(".addItem__orderInfo--extraPrice")
-            .textContent.match(/\d+/)[0]
+        const extraQtyInput = extra.querySelector(
+          ".addItem__orderInfo--extraQty"
         );
+        const extraPrice =
+          parseFloat(
+            extra
+              .querySelector(".addItem__orderInfo--extraPrice")
+              .textContent.match(/\d+/)[0]
+          ) * extraQtyInput.value;
+
         if (checkbox.checked) {
-          totalPrice += extraPrice;
+          totalExtras += extraPrice;
         }
       });
 
       const quantity = parseInt(qtyInput.value, 10);
       if (qtyInput.value) {
-        total.textContent = `المجموع ${totalPrice * quantity} د.ع`;
+        total.textContent = `المجموع ${
+          totalPrice * quantity + totalExtras
+        } د.ع`;
       }
     };
+
+    // Add an event listener to each 'extraQty' input
+    extras.forEach((extra) => {
+      const extraQtyInput = extra.querySelector(
+        ".addItem__orderInfo--extraQty"
+      );
+      extraQtyInput.addEventListener("input", () => {
+        updateTotal(); // Recalculate the total when 'extraQty' input changes
+      });
+    });
 
     extras.forEach((extra) => {
       const checkbox = extra.querySelector(".addItem__orderInfo--extraCheck");
@@ -196,5 +218,46 @@ addBtn.forEach((btn, i) => {
       }
       updateTotal();
     });
+  });
+});
+
+const cart = document.querySelector(".header__cart");
+cart.addEventListener("click", () => {
+  Swal.fire({
+    showCloseButton: true,
+    width: 370,
+    showConfirmButton: false,
+    html: `
+      <form class="cart">
+        <h1 class="cart__title">تفاصيل الطلب</h1>
+        <div class="cart__items">
+          <div class="cart__items--header">
+            <h2>المنتج</h2>
+            <h2>العدد</h2>
+            <h2>المجموع</h2>
+          </div>
+
+          <i class="cart__items--delete fa-regular fa-trash-can"></i>
+          <p class="cart__items--name">دبل بركر</p>
+          <p class="cart__items--qty">2</p>
+          <p class="cart__items--price">10000 د.ع</p>
+
+          <i class="cart__items--delete fa-regular fa-trash-can"></i>
+          <p class="cart__items--name">بركر لحم</p>
+          <p class="cart__items--qty">1</p>
+          <p class="cart__items--price">6000 د.ع</p>
+
+          <i class="cart__items--delete fa-regular fa-trash-can"></i>
+          <p class="cart__items--name">بيتزا خضار</p>
+          <p class="cart__items--qty">1</p>
+          <p class="cart__items--price">7000 د.ع</p>
+
+        </div>
+
+        <h1 class="cart__total">المجموع : 23000 د.ع</h1>
+        <button class="btn cart__btn">إتمام عملية الطلب</button>
+
+      </form>
+    `,
   });
 });
