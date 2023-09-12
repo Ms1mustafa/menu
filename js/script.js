@@ -92,9 +92,10 @@ addBtn.forEach((btn, i) => {
       html: `
         <form class="addItem">
           <div class="addItem__info">
-            <img src="${itemImg[i].src}" alt="${
-        itemImg[i].alt
-      }" class="addItem__info--img">
+            <img src="${itemImg[i].src}" 
+            alt="${itemImg[i].alt}" 
+            class="addItem__info--img"
+            loading="lazy">
             <h1 class="addItem__info--name">${itemName} <span class="addItem__info--price">${itemPrice[i].textContent}<span></h1>
           </div>
           <div class="addItem__orderInfo">
