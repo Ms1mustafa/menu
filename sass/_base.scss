@@ -1,0 +1,56 @@
+// COLOR VARIABLES
+
+:root {
+  --color-primary: #ffc26d;
+  --color-primary-dark: #453020;
+
+  --color-secondary: #2c8182;
+  --color-secondary-2: #FBF7EC;
+
+  --color-grey-light-1: #f9f7f6;
+  --color-grey-light-2: #aaa;
+
+  --color-grey-dark-1: #54483a;
+  --color-grey-dark-2: #6d5d4b;
+}
+
+// FONT VARIABLES
+$font-primary: "El Messiri", sans-serif;
+$font-display: "Josefin Sans", sans-serif;
+
+$shadow-light: 0 0.5rem 1.5rem #0000000e;
+
+//RESPONSIVE BREAKPOINTS
+$bp-largest: 75em; //1200px
+$bp-large: 62.5em; //1000px
+$bp-medium: 50em; //800px
+$bp-small: 37.5em; //600px
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; //10px/16px = 62.5% -> 10rem = 10px
+
+  // @media only screen and (max-width: $bp-medium){
+  //     font-size: 55%;
+  // }
+}
+
+body {
+  font-family: $font-primary;
+  color: var(--color-primary-dark);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.container {
+  display: grid;
+  grid-row-gap: 1rem;
+}

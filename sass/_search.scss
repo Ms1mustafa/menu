@@ -1,0 +1,8 @@
+.search {
+  direction: rtl;
+  width: 95%;
+
+  display: grid;
+  grid-template-columns: minmax(20rem, 80rem);
+  justify-self: center;
+}

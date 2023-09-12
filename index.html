@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/6c84e23e68.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="img/code.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+    <title>Menu</title>
+  </head>
+  <body class="container">
+    <header class="header">
+      <figure class="header__logo">
+        <svg
+          version="1.0"
+          viewBox="0 0 1158.000000 1157.000000"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <g
+            fill="#000"
+            transform="translate(0.000000,1157.000000) scale(0.100000,-0.100000)"
+            stroke="none"
+            id="logo"
+          >
+            <path
+              d="M5740 9873 c-621 -15 -1202 -159 -1760 -437 -577 -287 -1095 -724
+                -1487 -1256 -385 -522 -649 -1157 -748 -1798 -38 -250 -48 -380 -48 -642 0
+                -249 8 -370 44 -607 154 -1044 723 -1994 1577 -2636 496 -372 1105 -634 1722
+                -741 260 -45 420 -57 725 -57 649 1 1215 135 1815 429 335 164 670 397 975
+                675 l60 54 -244 251 -243 251 -101 -91 c-487 -434 -1074 -716 -1722 -827 -253
+                -44 -667 -55 -936 -26 -386 43 -774 157 -1124 332 -343 172 -607 363 -880 637
+                -389 391 -662 847 -825 1376 -252 823 -174 1731 215 2510 171 341 364 608 640
+                885 300 301 561 489 930 670 361 177 748 289 1145 331 215 22 636 15 835 -14
+                705 -105 1328 -406 1833 -887 l103 -98 82 79 c45 43 158 153 251 243 l170 165
+                -120 114 c-772 737 -1815 1140 -2884 1115z"
+            />
+            <path
+              d="M5527 8760 c-497 -48 -967 -211 -1372 -474 -631 -412 -1081 -1043
+                -1266 -1776 -69 -275 -83 -393 -83 -725 0 -249 3 -310 22 -430 84 -540 296
+                -1026 630 -1444 102 -128 332 -357 462 -460 418 -332 895 -537 1450 -622 193
+                -30 599 -33 785 -6 907 132 1640 590 2125 1329 489 743 617 1691 344 2539
+                -113 351 -282 667 -510 956 -160 203 -443 465 -663 612 -311 209 -688 369
+                -1051 446 -245 52 -644 77 -873 55z m-47 -1715 l0 -1005 -557 0 c-307 0 -750
+                3 -984 7 l-425 6 8 61 c30 227 126 522 240 736 285 535 755 928 1327 1110 116
+                37 327 88 374 89 16 1 17 -53 17 -1004z m800 968 c579 -126 1089 -481 1420
+                -989 307 -471 430 -1065 335 -1621 -136 -792 -674 -1452 -1423 -1747 -145 -57
+                -323 -105 -489 -131 l-43 -7 0 2267 0 2267 43 -7 c23 -4 94 -18 157 -32z
+                m-1358 -2573 l558 0 0 -960 c0 -704 -3 -960 -11 -960 -6 0 -68 11 -138 25
+                -348 71 -695 232 -976 454 -90 71 -285 266 -356 356 -225 285 -382 619 -454
+                970 -9 44 -18 91 -21 104 l-5 24 422 -6 c232 -4 674 -7 981 -7z"
+            />
+          </g>
+        </svg>
+      </figure>
+      <div class="header__cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </div>
+      <label for="navi-toggle" class="header__navmenu">
+        <input type="checkbox" class="header__navmenu--checkbox" id="navi-toggle" hidden>
+        <span class="header__navmenu--menu"></span>
+      </div>
+    </header>
+
+    <!-- <nav class="navbar">Navbar</nav> -->
+
+    <section class="sections">
+      <button class="sections__pagination sections__pagination--prev">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+      <div class="sections__items">
+        <a href="#" class="btn sections__btn">الاطباق الشرقية</a>
+        <a href="#" class="btn sections__btn">الاطباق الغربية</a>
+        <a href="#" class="btn sections__btn">المشاوي</a>
+        <a href="#" class="btn sections__btn">المقبلات</a>
+        <a href="#" class="btn sections__btn">العصائر</a>
+        <a href="#" class="btn sections__btn">الحلويات</a>
+        <a href="#" class="btn sections__btn">العصائر</a>
+        <a href="#" class="btn sections__btn">الاطباق الشرقية</a>
+        <a href="#" class="btn sections__btn">الاطباق الغربية</a>
+        <a href="#" class="btn sections__btn">المشاوي</a>
+        <a href="#" class="btn sections__btn">المقبلات</a>
+        <a href="#" class="btn sections__btn">العصائر</a>
+        <a href="#" class="btn sections__btn">الحلويات</a>
+        <a href="#" class="btn sections__btn">العصائر</a>
+        <a href="#" class="btn sections__btn">الاطباق الشرقية</a>
+        <a href="#" class="btn sections__btn">الاطباق الغربية</a>
+        <a href="#" class="btn sections__btn">المشاوي</a>
+        <a href="#" class="btn sections__btn">المقبلات</a>
+        <a href="#" class="btn sections__btn">العصائر</a>
+        <a href="#" class="btn sections__btn">الحلويات</a>
+        <a href="#" class="btn sections__btn">العصائر</a>
+      </div>
+      <button class="sections__pagination sections__pagination--next">
+        <i class="fa-solid fa-angle-left"></i>
+      </button>
+    </section>
+
+    <div class="search">
+      <input
+        type="text"
+        class="input search__input"
+        placeholder="ابحث عن منتج ..."
+      />
+    </div>
+
+    <main class="items">
+      <div class="items__section">
+        <h1 class="items__section--title">الاطباق الشرقية</h1>
+        <div class="items__section--items">
+          <div class="items__item">
+            <div class="items__item--main">
+              <img
+                src="img/cheeseburger.jpg"
+                alt=""
+                loading="lazy"
+                class="items__item--main-img"
+              />
+              <span class="items__item--main-new">جديد</span>
+              <button class="add-btn items__item--main-item__add">إضافة</button>
+            </div>
+            <div class="items__item--content">
+              <h2 class="item__name">
+                جيز بركر <span class="item__price">3000 د.ع</span>
+              </h2>
+              <p class="item__text">
+                400 غرام من اللحم المدخن (مطبوخ 12 ساعة) مع صلصة خاصة , خضروات ,
+                صلصة الباربكيو مع الجبن
+              </p>
+            </div>
+          </div>
+          <div class="items__item">
+            <div class="items__item--main">
+              <img
+                src="img/pizza.jpeg"
+                alt=""
+                loading="lazy"
+                class="items__item--main-img"
+              />
+              <span class="items__item--main-new">الاكثر طلبا</span>
+              <button class="add-btn items__item--main-item__add">إضافة</button>
+            </div>
+            <div class="items__item--content">
+              <h2 class="item__name">
+                بيتزا <span class="item__price">7000 د.ع</span>
+              </h2>
+              <p class="item__text">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo
+                nesciunt pariatur blanditiis, recusandae amet delectus tenetur
+                repudiandae quos voluptate consequatur?
+              </p>
+            </div>
+          </div>
+          <div class="items__item"></div>
+          <div class="items__item"></div>
+        </div>
+      </div>
+      <div class="items__section">
+        <h1 class="items__section--title">الاطباق الغربية</h1>
+        <div class="items__section--items">
+          <div class="items__item"></div>
+          <div class="items__item"></div>
+          <div class="items__item"></div>
+          <div class="items__item"></div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      
+
+// Update when the window is resized
+
+    </script>
+
+</body>
+</html>
+  </body>
+</html>
