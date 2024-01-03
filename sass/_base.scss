@@ -5,13 +5,13 @@
   --color-primary-dark: #453020;
 
   --color-secondary: #2c8182;
-  --color-secondary-2: #FBF7EC;
+  --color-secondary-2: #fbf7ec;
 
   --color-grey-light-1: #f9f7f6;
   --color-grey-light-2: #aaa;
 
   --color-grey-dark-1: #686767;
-  --color-grey-dark-2: rgb(63, 62, 60)
+  --color-grey-dark-2: rgb(63, 62, 60);
 }
 
 // FONT VARIABLES
@@ -37,6 +37,7 @@ $bp-small: 37.5em; //600px
 html {
   box-sizing: border-box;
   font-size: 62.5%; //10px/16px = 62.5% -> 10rem = 10px
+  scroll-behavior: smooth;
 
   // @media only screen and (max-width: $bp-medium){
   //     font-size: 55%;
@@ -53,4 +54,8 @@ body {
 .container {
   display: grid;
   grid-row-gap: 1rem;
+}
+
+.swal2-container {
+  direction: rtl;
 }

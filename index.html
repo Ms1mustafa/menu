@@ -50,21 +50,44 @@
     <div class="header__cart">
       <i class="fa-solid fa-cart-shopping"></i>
     </div>
+    <input type="checkbox" class="header__navmenu--checkbox" id="navi-toggle" hidden>
     <label for="navi-toggle" class="header__navmenu">
-      <input type="checkbox" class="header__navmenu--checkbox" id="navi-toggle" hidden>
       <span class="header__navmenu--menu"></span>
+    </label>
+    <nav class="navbar">
+      <div class="navContainer">
+        <h1 class="navContainer__customerName">اسم المطعم</h1>
+        <div class="navContainer__qrBox">
+          <img src="img/qr.png" alt="" class="navContainer__qrBox--img">
+          <button class="btn navContainer__qrBox--print">طباعة</button>
+        </div>
+        <div class="navContainer__links">
+          <button class="btn navContainer__links--navLink">إدارة المطعم</button>
+          <button class="btn navContainer__links--navLink">طلباتي</button>
+          <button class="btn navContainer__links--navLink">اللغة</button>
+          <button class="btn navContainer__links--navLink">تسجيل الخروج</button>
+        </div>
+        <iframe class="navContainer__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d219944.48144916797!2d47.93669479587986!3d30.53142857853539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fc49771852a1535%3A0xb8d22927274bd410!2z2KfZhNio2LXYsdip!5e0!3m2!1sar!2siq!4v1694900057547!5m2!1sar!2siq" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="navContainer__customerInfo">
+          <p class="navContainer__customerInfo--tel">
+            <a href="tel:+07733608808">07733608808</a> 
+            - 
+            <a href="tel:+07733608808">07733608808</a>
+          </p>
+          <p class="navContainer__customerInfo--workTime">اوقات العمل : 11 صباحا - 1 بعد منتصف الليل</p>
+        </div>
+        <a class="navContainer__copy" href="www.code.webdev">www.code.webdev</a>
       </div>
+    </nav>
   </header>
-
-  <!-- <nav class="navbar">Navbar</nav> -->
 
   <section class="sections">
     <button class="sections__pagination sections__pagination--prev">
       <i class="fa-solid fa-chevron-right"></i>
     </button>
     <div class="sections__items">
-      <a href="#" class="btn sections__btn">الاطباق الشرقية</a>
-      <a href="#" class="btn sections__btn">الاطباق الغربية</a>
+      <a href="#meals1" class="btn sections__btn">الاطباق الشرقية</a>
+      <a href="#meals2" class="btn sections__btn">الاطباق الغربية</a>
       <a href="#" class="btn sections__btn">المشاوي</a>
       <a href="#" class="btn sections__btn">المقبلات</a>
       <a href="#" class="btn sections__btn">العصائر</a>
@@ -95,7 +118,7 @@
   </div>
 
   <main class="items">
-    <div class="items__section">
+    <div class="items__section" id="meals1">
       <h1 class="items__section--title">الاطباق الشرقية</h1>
       <div class="items__section--items">
         <div class="items__item">
@@ -131,11 +154,26 @@
             </p>
           </div>
         </div>
-        <div class="items__item"></div>
+        <div class="items__item">
+          <div class="items__item--main">
+            <img src="img/pizza.jpeg" alt="" loading="lazy" class="items__item--main-img" />
+            <button class="add-btn items__item--main-item__add">إضافة</button>
+          </div>
+          <div class="items__item--content">
+            <h2 class="item__name">
+              لحم بعجين <span class="item__price">3500 د.ع</span>
+            </h2>
+            <p class="item__text">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo
+              nesciunt pariatur blanditiis, recusandae amet delectus tenetur
+              repudiandae quos voluptate consequatur?
+            </p>
+          </div>
+        </div>
         <div class="items__item"></div>
       </div>
     </div>
-    <div class="items__section">
+    <div class="items__section" id="meals2">
       <h1 class="items__section--title">الاطباق الغربية</h1>
       <div class="items__section--items">
         <div class="items__item"></div>

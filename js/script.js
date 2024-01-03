@@ -28,7 +28,7 @@ let isScrolling = false;
 
 function scrollLeft() {
   if (!isScrolling) {
-    const scrollAmount = itemWidth * 2;
+    const scrollAmount = itemWidth * 3;
 
     isScrolling = true;
 
@@ -50,7 +50,7 @@ function scrollLeft() {
 
 function scrollRight() {
   if (!isScrolling) {
-    const scrollAmount = itemWidth * 2;
+    const scrollAmount = itemWidth * 3;
 
     isScrolling = true;
 
@@ -105,13 +105,13 @@ addBtn.forEach((btn, i) => {
               <div class="addItem__orderInfo--extra">
                 <p class="addItem__orderInfo--extraName">ثومية</p>
                 <p class="addItem__orderInfo--extraPrice">1000 د.ع</p>
-                <input class="addItem__orderInfo--extraQty" type="number" value="1" min="1">
+                <input class="addItem__orderInfo--extraQty" type="number" step="1" value="1" min="1">
                 <input class="addItem__orderInfo--extraCheck" type="checkbox">
               </div>
               <div class="addItem__orderInfo--extra">
                 <p class="addItem__orderInfo--extraName">صلصة الباربكيو</p>
                 <p class="addItem__orderInfo--extraPrice">1000 د.ع</p>
-                <input class="addItem__orderInfo--extraQty" type="number" value="1" min="1">
+                <input class="addItem__orderInfo--extraQty" type="number" step="1" value="1" min="1">
                 <input class="addItem__orderInfo--extraCheck" type="checkbox">
               </div>
             <textarea class="addItem__orderInfo--note" placeholder="إضافة ملاحضات ..."></textarea>
@@ -123,7 +123,7 @@ addBtn.forEach((btn, i) => {
             <h1 class="addItem__orderInfo--total">المجموع ${parseFloat(
               itemPrice[i].textContent.match(/\d+/)[0]
             )} د.ع</h1>
-            <button class="btn addItem__orderInfo--btn">إضافة</button>
+            <button type="button" class="btn addItem__orderInfo--btn">إضافة</button>
           </div>
         </form>
       `,
@@ -218,6 +218,20 @@ addBtn.forEach((btn, i) => {
       }
       updateTotal();
     });
+    const orderBtn = document.querySelector(".addItem__orderInfo--btn");
+    orderBtn.addEventListener("click", () => {
+      Swal.fire({
+        icon: "success",
+        title: `تم إضافة ${itemName} عدد ${qtyInput.value} الى قائمة الطلبات`,
+        showConfirmButton: false,
+        timer: 2500,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+      });
+    });
   });
 });
 
@@ -255,9 +269,29 @@ cart.addEventListener("click", () => {
         </div>
 
         <h1 class="cart__total">المجموع : 23000 د.ع</h1>
-        <button class="btn cart__btn">إتمام عملية الطلب</button>
+        <button type="button" class="btn cart__btn">إتمام عملية الطلب</button>
 
       </form>
     `,
+  });
+  const cartBtn = document.querySelector(".cart__btn");
+  cartBtn.addEventListener("click", () => {
+    Swal.fire({
+      icon: "success",
+      title: "تم الطلب بنجاح",
+      showConfirmButton: false,
+      timer: 2500,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener("mouseenter", Swal.stopTimer);
+        toast.addEventListener("mouseleave", Swal.resumeTimer);
+      },
+    });
+  });
+
+  const deleteIcons = document.querySelectorAll(".cart__items--delete");
+
+  deleteIcons.forEach((deleteIcon, i) => {
+    deleteIcon.addEventListener("click", () => {});
   });
 });
